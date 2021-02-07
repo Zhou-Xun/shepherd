@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A conditional template</title>
+</head>
+<body>
+    <p>Your guess was {{ guess }}</p>
+    {% if guess < 42 %}
+        <p>Too loew</p>
+    {% elif guess > 42 %}
+        <p>Too high</p>
+    {% else %}
+        <p>Just right</p>
+    {% endif %}
+</body>
+</html>

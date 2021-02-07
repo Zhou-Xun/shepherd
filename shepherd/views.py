@@ -1,6 +1,9 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.utils.html import escape
+from django.views import View
+from django.shortcuts import render
+
 def hello(request):
     return HttpResponse("Hello xunzhou !")
 
@@ -27,3 +30,19 @@ def rest(request, guess):
             <p>Your guess was """ + escape(guess) + """</p></body></html>
         """
     return HttpResponse(response)
+
+class RestMainView(View):
+    def get(self, request, guess):
+        response = """
+            <html><body>
+            <p>Your guess was """+escape(guess)+"""</p></body></html>
+        """
+        return HttpResponse(response)
+
+def bounce(request):
+    return HttpResponseRedirect('https://www.baidu.com/')
+
+class GameView(View):
+    def get(self, request, guess):
+        x = {'guess': int(guess)}
+        return render(request, '../templates/html/cond.html', x)

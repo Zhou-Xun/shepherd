@@ -25,4 +25,7 @@ urlpatterns = [
     path('funky', views.funky),
     path('danger', views.danger),
     path('rest/<int:guess>', views.rest),
+    path('remain/<slug:guess>', views.RestMainView.as_view()),
+    path('bounce', views.bounce),
+    path('game/<slug:guess>', views.GameView.as_view())
 ]
