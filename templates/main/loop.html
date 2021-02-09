@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        {% for x in fruits %}
+        <li>{{ x }}</li>
+        {% endfor %}
+    </ul>
+        {% if nuts %}
+            <p>Number of nuts: {{ nut|length }}</p>
+        {% else %}
+            <p>No nuts.</p>
+        {% endif %}
+</body>
+</html>
+

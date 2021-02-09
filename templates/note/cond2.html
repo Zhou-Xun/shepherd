@@ -1,0 +1,11 @@
+{% extends "note/base.html" %}
+{% block content %}
+    <p>Your guess was {{ guess }}</p>
+    {% if guess < 42 %}
+        <p>Too low</p>
+    {% elif guess > 42 %}
+        <p>Too high</p>
+    {% else %}
+        <p>just right</p>
+    {% endif %}
+{% endblock %}

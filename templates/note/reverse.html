@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <li>
+        <a href="/note/second">hard-core</a>(Not Dry)
+    </li>
+    <li>
+        {% url 'note:first-view' %}(url 'note:first-view')
+    </li>
+    <li>
+        <a href="{% url 'note:second-view' %}">url 'note:second-view'</a>
+    </li>
+    <li>
+        <a href="{% url 'xunzhou_test:cats' %}">(url 'xunzhou:cats')</a>
+    </li>
+    <li>
+        <a href="{% url 'xunzhou_test:cat' 42 %}">(url 'xunzhou:cat' 42)</a>
+    </li>
+    <li>
+        <a href="{% url 'xunzhou:cats' %}">(url 'xunzhou:cats')</a>
+    </li>
+</body>
+</html>

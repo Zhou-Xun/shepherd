@@ -14,12 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='html/main.html')),
+    path('', TemplateView.as_view(template_name='main/main.html')),
     path('admin/', admin.site.urls),
     path('hello/', views.hello),
     path('funky', views.funky),
@@ -27,5 +27,9 @@ urlpatterns = [
     path('rest/<int:guess>', views.rest),
     path('remain/<slug:guess>', views.RestMainView.as_view()),
     path('bounce', views.bounce),
-    path('game/<slug:guess>', views.GameView.as_view())
+    path('game/<slug:guess>', views.GameView.as_view()),
+    path('simple', views.simple),
+    path('loop', views.loop),
+    path('note/', include('note.urls')),
+    path('xunzhou/', include('xunzhou.urls', namespace='xunzhou')),
 ]
