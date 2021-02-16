@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Blog Name {{ blog.name }}</p>
+    <p>Blog Date {{ blog.date }}</p>
+    <p>Blog Content {{ blog.content }}</p>
+    <a href="{% url 'blogs:all_blogs' %}">Go back to list.</a>
+</body>
+</html>

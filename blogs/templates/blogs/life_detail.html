@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .image {
+            width: 300px;
+            height: 200px;
+        }
+        .image img{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <p>Life Name {{ life.lifeName }}</p>
+    <p>Life Text {{ life.lifeText }}</p>
+    <div class="image"><img src="{{ life.picture.url }}"></div>
+    <a href="{% url 'blogs:lives' %}">Go back to list.</a>
+</body>
+</html>

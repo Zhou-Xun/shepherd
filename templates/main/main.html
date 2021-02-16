@@ -8,12 +8,22 @@
         body{
             width:100%;
             height:100%;
-            background: url("{% static 'image/wallhaven-9mxz8k_1920x1080.png' %}") no-repeat fixed 50% 50%;
+            background: url("{% static 'image/triangle_1920x1080.png' %}") no-repeat fixed 50% 50%;
             background-size:100% 100%;
+        }
+        #shepherd {
+            width: 10%;
+            position: absolute;
+            left: 0;
+            right: 40%;
+            margin: auto;
+            bottom: 22%;
         }
     </style>
 </head>
 <body>
-    <div class="bg"></div>
+    <div style=" margin: 0 auto;">
+        <img id="shepherd" alt="" src="{% static 'icon/shepherd.png' %}" />
+    </div>
 </body>
 </html>

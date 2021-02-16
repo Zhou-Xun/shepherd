@@ -9,5 +9,6 @@ urlpatterns=[
     path('reverse', TemplateView.as_view(template_name='note/reverse.html')),
     path('first', views.FirstView.as_view(), name='first-view'),
     path('second', views.SecondView.as_view(), name='second-view'),
+    path('detail', views.detail, name='detail'),
 ]
 

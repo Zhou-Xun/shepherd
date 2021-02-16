@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Life List</h1>
+    <p>
+        {% if life_list %}
+        <ul>
+            {% for life in life_list %}
+            <li>
+                <a href="{% url 'blogs:life' life.ID %}">{{ life.lifeName }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>There are no blogs in the database</p>
+        {% endif %}
+    </p>
+</body>
+</html>

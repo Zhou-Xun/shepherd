@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from django.views.generic import TemplateView
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='main/main.html')),
@@ -32,4 +34,6 @@ urlpatterns = [
     path('loop', views.loop),
     path('note/', include('note.urls')),
     path('xunzhou/', include('xunzhou.urls', namespace='xunzhou')),
+    path('blogs/', include('blogs.urls', namespace='blogs')),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
