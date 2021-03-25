@@ -7,7 +7,7 @@
         <ul>
             {% for study in object_list %}
             <li>
-                <a href="{{ study.note.url }}">{{ study.title }}</a>
+                <a href="{% url 'blogs:study' study.id %}">{{ study.title }}</a>
             </li>
             {% endfor %}
         </ul>

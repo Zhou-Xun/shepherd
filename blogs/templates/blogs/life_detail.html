@@ -14,9 +14,7 @@
     </style>
 </head>
 <body>
-    <p>Life Name {{ life.lifeName }}</p>
-    <p>Life Text {{ life.lifeText }}</p>
-    <div class="image"><img src="{{ life.picture.url }}"></div>
+    <p>{{ life.text | safe }}</p>
     <a href="{% url 'blogs:lives' %}">Go back to list.</a>
 </body>
 </html>

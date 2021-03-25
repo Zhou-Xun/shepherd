@@ -3,8 +3,7 @@
 <head>
 </head>
 <body>
-    <p>Study Title {{ study.title }}</p>
-    <p>Study Mark {{ study.mark }}</p>
-    <a href="{% url 'blogs:studis' %}">Go back to list.</a>
+    <p>{{ study.content | safe }}</p>
+    <a href="{% url 'blogs:studies' %}">Go back to list.</a>
 </body>
 </html>

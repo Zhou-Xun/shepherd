@@ -1,5 +1,6 @@
 from django.db import models
 from xunzhou.models import user
+from ckeditor.fields import RichTextField
 
 class Blog(models.Model):
     name = models.CharField(max_length=30)
@@ -10,17 +11,17 @@ class Blog(models.Model):
 class Life(models.Model):
     ID = models.BigAutoField(primary_key=True, editable=False)
     lastEditTime = models.DateTimeField(auto_now_add=True)
-    lifeName = models.CharField(max_length=20, verbose_name="lifeName")
-    lifeText = models.TextField(verbose_name="lifeContext")
+    name = models.CharField(max_length=20, verbose_name="lifeName")
+    text = RichTextField(null=True)
     picture = models.FileField(verbose_name='picture', null=True, upload_to='img/', blank=True)
 
     def __str__(self):
-        return self.lifeName
+        return self.name
 
 class Study(models.Model):
     title = models.CharField(max_length=30)
     mark = models.CharField(max_length=50)
-    content = models.CharField(max_length=50)
+    content = RichTextField(null=True)
     note = models.FileField(null=True, upload_to='notes/%Y/%m/%d/', blank=True)
     picture = models.ImageField(verbose_name='picture', null=True, upload_to='img/', blank=True)
     date = models.DateTimeField(auto_now_add=True)

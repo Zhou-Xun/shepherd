@@ -28,7 +28,7 @@ class StudyListView(ListView):
 
 class LifeCreate(LoginRequiredMixin, CreateView):
     model = Life
-    fields = ['lifeName', 'lifeText', 'picture']
+    fields = ['name', 'text', 'picture']
     success_url = reverse_lazy('blogs:lives')
 
 

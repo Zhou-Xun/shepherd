@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'xunzhou',
     'note',
     'blogs',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

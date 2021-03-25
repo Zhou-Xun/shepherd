@@ -12,7 +12,7 @@
         <ul>
             {% for life in life_list %}
             <li>
-                <a href="{% url 'blogs:life' life.ID %}">{{ life.lifeName }}</a>
+                <a href="{% url 'blogs:life' life.ID %}">{{ life.name }}</a>
 
                 (<a href="{% url 'blogs:lives_update' life.ID %}">Update</a> |
                 <a href="{% url 'blogs:lives_delete' life.ID %}">Delete</a>) <br/>
