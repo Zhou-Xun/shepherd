@@ -4,6 +4,9 @@ from django.utils.html import escape
 from django.views import View
 from django.shortcuts import render
 
+def login(request):
+    return render(request, 'main/login.html')
+
 def hello(request):
     return HttpResponse("Hello xunzhou !")
 
@@ -51,7 +54,7 @@ def simple(request):
     context = {'zap': '42',
                'txt': '<b>bold</b>',
                'outer': {'inner': '38'}}
-    return render(request, '../templates/main/simple.html', context)
+    return render(request, 'main/simple.html', context)
 
 def loop(request):
     f = ['Apple', 'Orange', 'Banana', 'Lychee']

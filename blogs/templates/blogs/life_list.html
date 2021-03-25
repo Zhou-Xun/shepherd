@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+
     <h1>Life List</h1>
     <p>
         {% if life_list %}
@@ -12,12 +13,17 @@
             {% for life in life_list %}
             <li>
                 <a href="{% url 'blogs:life' life.ID %}">{{ life.lifeName }}</a>
+
+                (<a href="{% url 'blogs:lives_update' life.ID %}">Update</a> |
+                <a href="{% url 'blogs:lives_delete' life.ID %}">Delete</a>) <br/>
             </li>
             {% endfor %}
         </ul>
         {% else %}
         <p>There are no blogs in the database</p>
         {% endif %}
+        <a href="{% url 'blogs:lives_create' %}">Add a life</a>
     </p>
+
 </body>
 </html>

@@ -22,18 +22,21 @@ from django.conf import settings
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='main/main.html')),
-    path('admin/', admin.site.urls),
-    path('hello/', views.hello),
-    path('funky', views.funky),
-    path('danger', views.danger),
-    path('rest/<int:guess>', views.rest),
-    path('remain/<slug:guess>', views.RestMainView.as_view()),
-    path('bounce', views.bounce),
-    path('game/<slug:guess>', views.GameView.as_view()),
-    path('simple', views.simple),
-    path('loop', views.loop),
     path('note/', include('note.urls')),
     path('xunzhou/', include('xunzhou.urls', namespace='xunzhou')),
     path('blogs/', include('blogs.urls', namespace='blogs')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('admin/', admin.site.urls),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+#
+# path('hello/', views.hello),
+# path('funky', views.funky),
+# path('danger', views.danger),
+# path('rest/<int:guess>', views.rest),
+# path('remain/<slug:guess>', views.RestMainView.as_view()),
+# path('bounce', views.bounce),
+# path('game/<slug:guess>', views.GameView.as_view()),
+# path('simple', views.simple),
+# path('loop', views.loop),

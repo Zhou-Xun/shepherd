@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base_bootstrap.html" %}
+{% block content %}
     <h1>Blog List</h1>
     <p>
-        {% if blog_list %}
-        <ul>
-            {% for blog in blog_list %}
-            <li>
-                <a href="{% url 'blogs:blog' blog.id %}">{{ blog.name }}</a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% else %}
-        <p>There are no blogs in the database</p>
-        {% endif %}
+    <ul>
+        <li><a href="{% url 'blogs:studies' %}">My Notes</a></li>
+        <li><a href="{% url 'blogs:lives' %}">Share Lives</a></li>
+    </ul>
+
+
+{#        {% if blog_list %}#}
+{#        <ul>#}
+{#            {% for blog in blog_list %}#}
+{#            <li>#}
+{#                <a href="{% url 'blogs:blog' blog.id %}">{{ blog.name }}</a>#}
+{#            </li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#        {% else %}#}
+{#        <p>There are no blogs in the database</p>#}
+{#        {% endif %}#}
     </p>
-</body>
-</html>
+{% endblock %}

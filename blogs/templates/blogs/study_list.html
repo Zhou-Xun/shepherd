@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Study List</h1>
+{% extends "base_menu.html" %}
+{% load static %}
+{% block content %}
+    <h1>Note List</h1>
     <p>
         {% if study_list %}
         <ul>
             {% for study in object_list %}
             <li>
-                <a href="{% url 'blogs:study' study.id %}">{{ study.title }}</a>
+                <a href="{{ study.note.url }}">{{ study.title }}</a>
             </li>
             {% endfor %}
         </ul>
@@ -19,5 +15,4 @@
         <p>There are no blogs in the database</p>
         {% endif %}
     </p>
-</body>
-</html>
+{% endblock %}

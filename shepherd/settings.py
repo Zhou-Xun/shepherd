@@ -25,7 +25,7 @@ SECRET_KEY = ')d+903g=bedja@%=1^r$tnc&&&7l(+daeg^vq+eh!%md6b*^49'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -66,6 +66,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'xunzhou.context_processors.settings',  # Add
+                'social_django.context_processors.backends',  # Add
+                'social_django.context_processors.login_redirect',  # Add
             ],
         },
     },
@@ -77,10 +80,19 @@ WSGI_APPLICATION = 'shepherd.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'shepherd',
+        'USER': 'root',
+        'PASSWORD': 'shepherd',
+        'HOST': 'localhost',
     }
 }
 
@@ -128,3 +140,6 @@ STATICFILES_DIRS=[
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet"  type="text/css"  href="{% static 'css/button_style.css' %}" >
     <style type="text/css">
         body{
             width:100%;
@@ -12,18 +13,34 @@
             background-size:100% 100%;
         }
         #shepherd {
-            width: 10%;
+            width: 12%;
             position: absolute;
             left: 0;
             right: 40%;
             margin: auto;
             bottom: 22%;
         }
+        .bt_style {
+            position: absolute;
+            left: 0;
+            right: 0%;
+            margin: auto;
+            bottom: 35%;
+        }
+
     </style>
+
 </head>
 <body>
-    <div style=" margin: 0 auto;">
+    <div>
         <img id="shepherd" alt="" src="{% static 'icon/shepherd.png' %}" />
+    </div>
+    <div>
+        <form action="{% url 'xunzhou:login' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="hidden" value=1>
+            <button class="bttn-unite bttn-lg bttn-danger bt_style" style="font-size: 18px"><a></a>Login</button>
+        </form>
     </div>
 </body>
 </html>

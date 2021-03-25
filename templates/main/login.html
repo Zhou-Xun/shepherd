@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/iconfont.css' %}" />
+		<title>登录界面</title>
+        <link rel="stylesheet"  type="text/css"  href="{% static 'css/input_style.css' %}" >
+        <style type="text/css">
+        body{
+            width:100%;
+            height:100%;
+            background: url("{% static 'image/wallhaven-g7jg63_1920x1080.png' %}") no-repeat fixed 50% 50%;
+            background-size:100% 100%;
+        }
+        h1{
+            font: italic 2em Georgia, serif;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition-delay: 99999s;
+            transition: color 99999s ease-out, background-color 99999s ease-out;
+            -webkit-transition-delay: 99999s;
+            -webkit-transition: color 99999s ease-out, background-color 99999s ease-out;
+            -webkit-text-fill-color: #807c7c;
+        }
+        </style>
+	</head>
+	<body>
+        <form action="{% url 'xunzhou:login'%}" method="post">
+            {% csrf_token %}
+		<div id="bigBox">
+			<h1>LOGIN</h1>
+			<div class="inputBox">
+				<div class="inputText">
+					<span class="iconfont icon-nickname"></span>
+					<input type="text" name="account" placeholder="Enter my name" style="font: italic 1em Georgia, serif;"/>
+				</div>
+			</div>
+			<input class="input--haruki input__field--haruki" type="submit" name="dopost" value="submit" style="font: italic 1em Georgia, serif;"/>
+		</div>
+        </form>
+	</body>
+</html>
