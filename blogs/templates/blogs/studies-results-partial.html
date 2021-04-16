@@ -1,0 +1,18 @@
+{% if study_list %}
+{% for study in study_list %}
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+        <div class="flex-grow-1">
+            <h3 class="mb-0"><a href="{% url 'blogs:types' study.id %}">{{ study.title }}</a></h3>
+            <div class="subheading mb-3">
+                {% if study.tags.all %}
+                    {% for tag in study.tags.all %}
+                        <span>{{ tag }}&nbsp&nbsp</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <p>{{ study.text | safe }}</p>
+        </div>
+        <div class="flex-shrink-0"><span class="text-primary">{{ study.natural_updated }}</span></div>
+    </div>
+{% endfor %}
+{% endif %}

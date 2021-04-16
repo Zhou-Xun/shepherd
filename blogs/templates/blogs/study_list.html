@@ -1,4 +1,4 @@
-{% extends "base_menu.html" %}
+{% extends "base_bootsrap.html" %}
 {% load static %}
 {% block content %}
     <h1>Note List</h1>
@@ -15,4 +15,5 @@
         <p>There are no blogs in the database</p>
         {% endif %}
     </p>
+    <a href="{% url 'blogs:all_blogs' %}">Go back to blog.</a>
 {% endblock %}

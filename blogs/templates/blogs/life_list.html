@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
+{% extends "base_menu_studies.html" %}
+{% block content %}
     <h1>Life List</h1>
     <p>
         {% if life_list %}
@@ -24,6 +18,5 @@
         {% endif %}
         <a href="{% url 'blogs:lives_create' %}">Add a life</a>
     </p>
-
-</body>
-</html>
+    <a href="{% url 'blogs:all_blogs' %}">Go back to blog.</a>
+{% endblock %}

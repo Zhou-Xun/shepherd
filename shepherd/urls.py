@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='main/main.html')),
+    path('', views.HomeView.as_view(), name='all'),
+    # path('', TemplateView.as_view(template_name='main/main.html')),
     path('note/', include('note.urls')),
     path('xunzhou/', include('xunzhou.urls', namespace='xunzhou')),
     path('blogs/', include('blogs.urls', namespace='blogs')),

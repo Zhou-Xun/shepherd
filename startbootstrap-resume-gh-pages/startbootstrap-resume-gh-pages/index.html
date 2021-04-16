@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,28 +5,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Xun Zhou - Website</title>
-        <link rel="icon" type="image/x-icon" href="{% static 'icon/favicon.ico' %}" />
+        <title>Resume - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles_base.css' %}" />
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Welcome to my website!</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{%  static 'image/umich.jpg' %}" alt="" /></span>
+                <span class="d-block d-lg-none">Clarence Taylor</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="" /></span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#warehouse">Warehouse</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
@@ -42,40 +40,20 @@
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
                     <h1 class="mb-0">
-                        Welcome
-                        <span class="text-primary">to my Website!</span>
+                        Clarence
+                        <span class="text-primary">Taylor</span>
                     </h1>
                     <div class="subheading mb-5">
-                        Shanghai · China · (86) 18101817161 ·
-                        <a href="xunzhou@umich.edu">xunzhou@umich.edu</a>
+                        3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
+                        <a href="mailto:name@email.com">name@email.com</a>
                     </div>
-                    <p class="lead mb-5">Hi, everyone. I'm Xun Zhou, currently a master student of information science.
-                        Here I will share my study life and personal experience with you.</p>
+                    <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
                     <div class="social-icons">
                         <a class="social-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a class="social-icon" href="#"><i class="fab fa-github"></i></a>
                         <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a>
                     </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Warehouse -->
-            <section class="resume-section" id="warehouse">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Warehouse</h2>
-                    <form>
-                    <i id="search-icon" class="fa fa-search"></i> &nbsp;
-                    <input id="user-input" type="text" placeholder="Search.." name="study_search"
-                        {% if search %} value="{{ search }}" {% endif %}
-                    >
-                    <input type=button onclick="history.go(0)" class="fa fa-undo">
-                    <a href="{% url 'blogs:all' %}"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i></a>
-                    </form>
-                <p></p>
-                <div id="replaceable-content">
-                    {% include 'blogs/studies-results-partial.html' %}
-                </div>
                 </div>
             </section>
             <hr class="m-0" />
@@ -245,6 +223,6 @@
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
-        <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>

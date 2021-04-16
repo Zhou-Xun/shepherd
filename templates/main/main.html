@@ -36,7 +36,7 @@
         <img id="shepherd" alt="" src="{% static 'icon/shepherd.png' %}" />
     </div>
     <div>
-        <form action="{% url 'xunzhou:login' %}" method="post">
+        <form action="{% url 'blogs:all' %}" method="get">
             {% csrf_token %}
             <input type="hidden" name="hidden" value=1>
             <button class="bttn-unite bttn-lg bttn-danger bt_style" style="font-size: 18px"><a></a>Login</button>
